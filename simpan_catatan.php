@@ -7,6 +7,11 @@ $waktu      = $_POST['waktu'];
 $lokasi     = $_POST['lokasi'];
 $suhu       = $_POST['suhu'];
 
+$format = "\n$nik|$tanggal|$waktu|$lokasi|$suhu";
+$file = fopen('catatan.txt', 'a');
+fwrite($file, $format);
+fclose($file);
+
 include 'koneksi.php';
 $sql = "INSERT INTO catatan(nik, tanggal, waktu, lokasi, suhu)
         VALUES('$nik','$tanggal','$waktu','$lokasi','$suhu')";
