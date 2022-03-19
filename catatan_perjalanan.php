@@ -20,16 +20,7 @@
                         <th>Aksi</th> 
                     </tr>
                 </thead>
-                <!-- <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Tanggal</th>
-                        <th>Waktu</th>
-                        <th>Lokasi</th>
-                        <th>Suhu</th>
-                        <th>Update</th> 
-                    </tr>
-                </tfoot> -->
+              
                 <tbody>
                     <?php 
                     include 'koneksi.php';
