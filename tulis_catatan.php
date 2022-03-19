@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
-                <button type="reset" class="btn btn-warning"><i class="fa fa-trash"></i> Kosongkan</button>
+                
             </div>
 
             </div>

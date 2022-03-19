@@ -146,8 +146,8 @@ if(empty($_SESSION['nik'])){?>
                                     case 'catatan_perjalanan';
                                     include 'catatan_perjalanan.php';
                                 
-                                    default:
-                                    echo "Halaman Tidak Ditemukan";
+                                    // default:
+                                    // echo "Halaman Tidak Ditemukan";
                                     break;
                                 }
                             }else{

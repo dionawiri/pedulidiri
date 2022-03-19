@@ -45,7 +45,7 @@
                         <td><?= $value['lokasi'] ?></td>
                         <td><?= $value['suhu'] ?></td> 
                         <td class="text-center"><a href="update.php?id_catatan=<?php echo $value['id_catatan']; ?>"><button type="submit" class="btn btn-warning"><i class="fa fa-pen"></i> </button></a>
-                        <a href="update_catatan.php"><button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button></a></td>
+                        <a href="hapus.php?id_catatan=<?php echo $value['id_catatan']; ?>"><button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button></a></td>
                     </tr>
                     <?php } ?>
                 </tbody>

@@ -10,6 +10,10 @@ $id_catatan = $_GET['id_catatan'];
 mysqli_query($koneksi,"delete from catatan where id_catatan='$id_catatan'");
 
 // mengalihkan halaman kembali ke index.php
-header("location:user.php");
-
 ?>
+<script>
+        alert("Data Berhasil Dihapus");
+        window.location.assign("user.php")
+    </script>
+
+
