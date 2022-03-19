@@ -19,7 +19,7 @@ $query = mysqli_query($koneksi, $sql);
 if($query){?>
     <script>
         alert("Data Catatan tersimpan");
-        window.location.assign("user.php")
+        window.location.assign("user.php?url=catatan_perjalanan")
     </script>
     <?php 
     } else{?>

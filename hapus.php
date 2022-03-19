@@ -13,7 +13,7 @@ mysqli_query($koneksi,"delete from catatan where id_catatan='$id_catatan'");
 ?>
 <script>
         alert("Data Berhasil Dihapus");
-        window.location.assign("user.php")
+        window.location.assign("user.php?url=catatan_perjalanan")
     </script>
 
 
