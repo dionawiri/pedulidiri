@@ -23,7 +23,7 @@
               
                 <tbody>
                     <?php 
-                    include 'koneksi.php';
+                    include '../koneksi.php';
                     $no     = 1;
                     $sql    = "SELECT * FROM catatan WHERE nik='$_SESSION[nik]'";
                     $query  = mysqli_query($koneksi, $sql);
@@ -35,8 +35,8 @@
                         <td><?= $value['waktu'] ?></td>
                         <td><?= $value['lokasi'] ?></td>
                         <td><?= $value['suhu'] ?></td> 
-                        <td class="text-center"><a href="update.php?id_catatan=<?php echo $value['id_catatan']; ?>"><button type="submit" class="btn btn-warning"><i class="fa fa-pen"></i> </button></a>
-                        <a href="hapus.php?id_catatan=<?php echo $value['id_catatan']; ?>"><button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button></a></td>
+                        <td class="text-center"><a href="update.php?id_catatan=<?= $value['id_catatan']; ?>"><button type="submit" class="btn btn-warning"><i class="fa fa-pen"></i> </button></a>
+                        <a href="hapus.php?id_catatan=<?= $value['id_catatan']; ?>"><button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button></a></td>
                     </tr>
                     <?php } ?>
                 </tbody>

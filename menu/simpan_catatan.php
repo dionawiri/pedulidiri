@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 $nik        = $_SESSION['nik'];
 $tanggal    = $_POST['tanggal'];
 $waktu      = $_POST['waktu'];

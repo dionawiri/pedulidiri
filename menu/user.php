@@ -3,7 +3,7 @@ session_start();
 if(empty($_SESSION['nik'])){?>
     <script>
         alert('Silahkan Login Terlebih Dahulu.')
-        window.location.assign('index.php');
+        window.location.assign('../index.php');
     </script>
 <?php } ?>
 <!DOCTYPE html>
@@ -20,15 +20,15 @@ if(empty($_SESSION['nik'])){?>
     <title>User - Peduli Diri</title>
 
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -81,7 +81,7 @@ if(empty($_SESSION['nik'])){?>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="nav-link" href="index.php" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-fw fa-power-off"></i>
                     <span>Logout</span></a>
             </li>
@@ -136,6 +136,12 @@ if(empty($_SESSION['nik'])){?>
                     <!-- Page Heading -->
                     <div class="mb-4 text-gray-800">
                         <?php 
+                        
+                    include '../koneksi.php';
+                   
+                    $sql    = "SELECT * FROM user WHERE nik='$_SESSION[nik]'";
+                    $query  = mysqli_query($koneksi, $sql);
+                    
                         $url = @$_GET['url'];
                         if(!empty($url)){
                             switch ($url) {
@@ -146,68 +152,20 @@ if(empty($_SESSION['nik'])){?>
                                     case 'catatan_perjalanan';
                                     include 'catatan_perjalanan.php';
                                 
-                                    default:
-                                    echo "Halaman Tidak Ditemukan";
+                                    // default:
+                                    // echo "Halaman Tidak Ditemukan";
                                     break;
                                 }
                             }else{
-                                echo " Selamat Datang Di Aplikasi Peduli Diri, Aplikasi Ini Untuk Mencatat Riwayat Perjalanan Anda.<br><br>";
-                                echo "<h3> Anda Login Sebagai : " .$_SESSION['nama_lengkap']. "</h3>" ;
+                                foreach ($query as $value) {
+                                 
+                                echo " <h4>Selamat Datang Di Aplikasi Peduli Diri, Aplikasi Ini Untuk Mencatat Riwayat Perjalanan Anda.</h4><br>";
+                                echo "<h3> Anda Login Sebagai : </h3>" ;
+                                ?> <h2><?= $value['nama_lengkap'] ?></h2><?php }
                             }
                         ?>
                     </div>
-<?php
-    
-	include 'koneksi.php';
-	$id_catatan = $_GET['id_catatan'];
-	$data = mysqli_query($koneksi,"SELECT * FROM catatan WHERE id_catatan='$id_catatan'");
-	while($d = mysqli_fetch_array($data)){
-		?>
-	
-<div class="card">
-    <div class="card-header">
-        <a href="user.php" class="btn btn-primary btn-icon-split">
-            <span class="icon text-white-50">
-                 <i class="fas fa-arrow-left"></i>
-            </span>
-            <span class="text">Kembali</span>
-        </a>
-    </div>
-
-	
-
-    <div class="card-body">
-        <form method="post" action="update_catatan.php">
-                <input type="hidden" name="id_catatan" value="<?php echo $d['id_catatan']; ?>">
-            
-            <div class="form-group">
-               <label>Tanggal Perjalanan</label> 
-               <input name="tanggal" class="form-control" type="date" value="<?php echo $d['tanggal']; ?>" required>
-            </div>
-            <div class="form-group">
-               <label>Waktu Perjalanan</label> 
-               <input name="waktu" class="form-control" type="time" value="<?php echo $d['waktu']; ?>" required>
-            </div>
-            <div class="form-group"> 
-               <label>Lokasi Perjalanan</label> 
-               <input name="lokasi" class="form-control" type="text" value="<?php echo $d['lokasi']; ?>" required>
-            </div>
-            <div class="form-group">
-               <label>Suhu Tubuh</label> 
-               <input name="suhu" class="form-control" type="text" value="<?php echo $d['suhu']; ?>" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" value="simpan" class="btn btn-primary"><i class="fa fa-save"></i>Simpan</button>
-                
-            </div>
-        </form>
-    </div>
-</div>
-<?php 
-	}
-	?>
-
-
+                    
                 </div>
                 <!-- /.container-fluid -->
 
@@ -235,42 +193,24 @@ if(empty($_SESSION['nik'])){?>
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
     
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="../js/demo/datatables-demo.js"></script>
 
 </body>
 

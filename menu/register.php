@@ -12,13 +12,13 @@
     <title>Peduli Diri - Register</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -50,11 +50,25 @@
                                             <input type="text" name="nama_lengkap" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Masukkan Nama Lengkap" required >
                                         </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Masukkan Password" required >
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="alamat" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Masukkan alamat" requied >
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="date" name="tgl_lahir" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Masukkan NIK" requied >
+                                        </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Register <i class="fa fa-spinner"></i>
                                         </button>
                                         <hr>
-                                        <a href="index.php" class="btn btn-facebook btn-user btn-block">
+                                        <a href="../index.php" class="btn btn-facebook btn-user btn-block">
                                            <i class="fa fa-arrow-left"></i> Sudah Punya Akun? Login
                                         </a>
                                     </form>

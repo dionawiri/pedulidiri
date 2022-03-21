@@ -41,21 +41,21 @@
                                         <h1 class="h4 text-gray-900 mb-4">Di Aplikasi Peduli Diri</h1>
                                         <p>Silahkan Masukkan NIK dan Nama Lengkap</p>
                                     </div>
-                                    <form class="user" method="post" action="proses_login.php">
+                                    <form class="user" method="post" action="menu/proses_login.php">
                                         <div class="form-group">
                                             <input type="text" name="nik" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Masukkan NIK" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="nama_lengkap" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Masukkan Nama Lengkap" required>
+                                            <input type="password" name="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Masukkan Password" required>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login <i class="fa fa-key"></i>
                                         </button>
                                         <hr>
-                                        <a href="register.php" class="btn btn-facebook btn-user btn-block">
+                                        <a href="menu/register.php" class="btn btn-facebook btn-user btn-block">
                                            Register <i class="fa fa-arrow-right"></i>
                                         </a>
                                     </form>

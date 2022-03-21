@@ -8,7 +8,7 @@ $waktu      = $_POST['waktu'];
 $lokasi     = $_POST['lokasi'];
 $suhu       = $_POST['suhu'];
 
-$format     = "\n$id_catatan|$tanggal|$waktu|$lokasi|$suhu";
+$format     = "\n$nik|$id_catatan|$tanggal|$waktu|$lokasi|$suhu";
 $file       = fopen('txt/update_catatan.txt', 'a');
 fwrite($file, $format);
 fclose($file);

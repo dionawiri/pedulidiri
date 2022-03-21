@@ -3,7 +3,7 @@ session_start();
 if(empty($_SESSION['nik'])){?>
     <script>
         alert('Silahkan Login Terlebih Dahulu.')
-        window.location.assign('index.php');
+        window.location.assign('../index.php');
     </script>
 <?php } ?>
 <!DOCTYPE html>
@@ -20,15 +20,15 @@ if(empty($_SESSION['nik'])){?>
     <title>User - Peduli Diri</title>
 
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -146,8 +146,8 @@ if(empty($_SESSION['nik'])){?>
                                     case 'catatan_perjalanan';
                                     include 'catatan_perjalanan.php';
                                 
-                                    // default:
-                                    // echo "Halaman Tidak Ditemukan";
+                                    default:
+                                    echo "Halaman Tidak Ditemukan";
                                     break;
                                 }
                             }else{
@@ -156,6 +156,57 @@ if(empty($_SESSION['nik'])){?>
                             }
                         ?>
                     </div>
+<?php
+    
+	include '../koneksi.php';
+	$id_catatan = $_GET['id_catatan'];
+	$data = mysqli_query($koneksi,"SELECT * FROM catatan WHERE id_catatan='$id_catatan'");
+	while($d = mysqli_fetch_array($data)){
+		?>
+	
+<div class="card">
+    <div class="card-header">
+        <a href="user.php" class="btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+                 <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="text">Kembali</span>
+        </a>
+    </div>
+
+	
+
+    <div class="card-body">
+        <form method="post" action="update_catatan.php">
+                <input type="hidden" name="id_catatan" value="<?php echo $d['id_catatan']; ?>">
+            
+            <div class="form-group">
+               <label>Tanggal Perjalanan</label> 
+               <input name="tanggal" class="form-control" type="date" value="<?php echo $d['tanggal']; ?>" required>
+            </div>
+            <div class="form-group">
+               <label>Waktu Perjalanan</label> 
+               <input name="waktu" class="form-control" type="time" value="<?php echo $d['waktu']; ?>" required>
+            </div>
+            <div class="form-group"> 
+               <label>Lokasi Perjalanan</label> 
+               <input name="lokasi" class="form-control" type="text" value="<?php echo $d['lokasi']; ?>" required>
+            </div>
+            <div class="form-group">
+               <label>Suhu Tubuh</label> 
+               <input name="suhu" class="form-control" type="text" value="<?php echo $d['suhu']; ?>" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="simpan" class="btn btn-primary"><i class="fa fa-save"></i>Simpan</button>
+                
+            </div>
+        </form>
+    </div>
+</div>
+<?php 
+	}
+	?>
+
 
                 </div>
                 <!-- /.container-fluid -->
