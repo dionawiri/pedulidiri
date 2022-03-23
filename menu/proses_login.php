@@ -10,7 +10,7 @@ if(mysqli_num_rows($query)==0){ ?>
 
     <script>
         alert("NIK dan Nama lengkap tidak ditemukan.");
-        window.location.assign("#")
+        window.location.assign("../index.php")
     </script>
     <?php 
     }else{

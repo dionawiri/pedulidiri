@@ -9,19 +9,19 @@
     </div>
     <div class="card-body">
         <form method="post" action="simpan_catatan.php">
-            <div class="form-group">
+            <div class="form-group col-2">
                 <label>Tanggal Perjalanan</label>
                 <input type="date" name="tanggal" class="form-control" placeholder="Pilih Tanggal" required>
             </div>
-            <div class="form-group">
+            <div class="form-group col-2">
                 <label>Waktu Perjalanan</label>
                 <input type="time" name="waktu" class="form-control" placeholder="Pilih Waktu" required>
             </div>
-            <div class="form-group">
+            <div class="form-group col-12">
                 <label>Lokasi Perjalanan</label>
                 <input type="text" name="lokasi" class="form-control" placeholder="Masukkan lokasi Perjalanan" required>
             </div>
-            <div class="form-group">
+            <div class="form-group col-12">
                 <label>Suhu Tubuh</label>
                 <input type="text" name="suhu" class="form-control" placeholder="Masukkan Suhu Tubuh" required>
             </div>

@@ -41,11 +41,11 @@ if(empty($_SESSION['nik'])){?>
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15"> 
                 </div>
-                <div class="sidebar-brand-text mx-3">Peduli Diri <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">
+                    <img src="../img/who.png" width="25%">Peduli Diri </div>
             </a>
 
             <!-- Divider -->
@@ -56,6 +56,11 @@ if(empty($_SESSION['nik'])){?>
                 <a class="nav-link" href="user.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?url=profil">
+                    <i class="fas fa-fw fa-user-alt"></i>
+                    <span>Profil Saya</span></a>
             </li>
 
             <!-- Divider -->
@@ -148,6 +153,10 @@ if(empty($_SESSION['nik'])){?>
                                     case 'tulis_catatan':
                                     include 'tulis_catatan.php';
                                     break;
+                                    
+                                    case 'profil';
+                                    include 'profil.php';
+                                    break;
 
                                     case 'catatan_perjalanan';
                                     include 'catatan_perjalanan.php';
@@ -165,7 +174,9 @@ if(empty($_SESSION['nik'])){?>
                             }
                         ?>
                     </div>
-                    
+                    <!-- <img align="middle" src="../img/duck.gif" width="10%" >
+                    <img  src="../img/duck.gif" width="5%" >
+                    <img  src="../img/duck.gif" width="2%" > -->
                 </div>
                 <!-- /.container-fluid -->
 
@@ -176,7 +187,7 @@ if(empty($_SESSION['nik'])){?>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Peduli Diri 2020</span>
+                        <span>Copyright &copy; Peduli Diri 2022</span>
                     </div>
                 </div>
             </footer>

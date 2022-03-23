@@ -42,10 +42,10 @@ if(empty($_SESSION['nik'])){?>
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon rotate-n-15"> 
                 </div>
-                <div class="sidebar-brand-text mx-3">Peduli Diri <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">
+                    <img src="../img/who.png" width="25%">Peduli Diri </div>
             </a>
 
             <!-- Divider -->
@@ -67,18 +67,7 @@ if(empty($_SESSION['nik'])){?>
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="?url=tulis_catatan">
-                    <i class="fas fa-fw fa-pen"></i>
-                    <span>Tulis Catatan Perjalanan</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="?url=catatan_perjalanan">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Catatan Perjalanan</span></a>
-            </li>
+           
 
             <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -126,7 +115,7 @@ if(empty($_SESSION['nik'])){?>
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     </ul>
-                <h3>Aplikasi Peduli Diri - Catatan Perjalanan</h3>
+                <h3>Aplikasi Peduli Diri - Edit Catatan Perjalanan</h3>
                 </nav>
                 <!-- End of Topbar -->
 
@@ -151,8 +140,8 @@ if(empty($_SESSION['nik'])){?>
                                     break;
                                 }
                             }else{
-                                echo " Selamat Datang Di Aplikasi Peduli Diri, Aplikasi Ini Untuk Mencatat Riwayat Perjalanan Anda.<br><br>";
-                                echo "<h3> Anda Login Sebagai : " .$_SESSION['nama_lengkap']. "</h3>" ;
+                                
+                                
                             }
                         ?>
                     </div>
@@ -180,24 +169,24 @@ if(empty($_SESSION['nik'])){?>
         <form method="post" action="update_catatan.php">
                 <input type="hidden" name="id_catatan" value="<?php echo $d['id_catatan']; ?>">
             
-            <div class="form-group">
+            <div class="form-group col-2">
                <label>Tanggal Perjalanan</label> 
                <input name="tanggal" class="form-control" type="date" value="<?php echo $d['tanggal']; ?>" required>
             </div>
-            <div class="form-group">
+            <div class="form-group col-2">
                <label>Waktu Perjalanan</label> 
                <input name="waktu" class="form-control" type="time" value="<?php echo $d['waktu']; ?>" required>
             </div>
-            <div class="form-group"> 
+            <div class="form-group col-12"> 
                <label>Lokasi Perjalanan</label> 
                <input name="lokasi" class="form-control" type="text" value="<?php echo $d['lokasi']; ?>" required>
             </div>
-            <div class="form-group">
+            <div class="form-group col-12">
                <label>Suhu Tubuh</label> 
                <input name="suhu" class="form-control" type="text" value="<?php echo $d['suhu']; ?>" required>
             </div>
             <div class="form-group">
-                <button type="submit" value="simpan" class="btn btn-primary"><i class="fa fa-save"></i>Simpan</button>
+                <button type="submit" value="simpan" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                 
             </div>
         </form>
@@ -209,6 +198,10 @@ if(empty($_SESSION['nik'])){?>
 
 
                 </div>
+                    <!-- <img align="left" src="../img/duck.gif" width="10%" >
+                    <img  src="../img/duck.gif" width="5%" >
+                    <img  src="../img/duck.gif" width="2%" > -->
+
                 <!-- /.container-fluid -->
 
             </div>
@@ -218,7 +211,7 @@ if(empty($_SESSION['nik'])){?>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Peduli Diri 2020</span>
+                        <span>Copyright &copy; Peduli Diri 2022</span>
                     </div>
                 </div>
             </footer>
@@ -256,21 +249,21 @@ if(empty($_SESSION['nik'])){?>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
     
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="../js/demo/datatables-demo.js"></script>
 
 </body>
 

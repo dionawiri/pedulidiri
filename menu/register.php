@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="img js-fullheight" style="background-image: url(../img/dc.jpg);">
 
     <div class="container">
 
@@ -37,6 +37,9 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
+                                        <img align="top" src="../img/birds.gif" width="5%">
+                                        <br>
+                                        <img src="../img/who.png" width="25%">
                                         <h1 class="h4 text-gray-900 mb-2">Registrasi Peduli Diri </h1>
                                         <p>Silahkan Masukkan NIK dan Nama Lengkap</p>
                                     </div>
@@ -85,14 +88,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="j../s/sb-admin-2.min.js"></script>
 
 </body>
 
